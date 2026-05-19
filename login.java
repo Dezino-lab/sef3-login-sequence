@@ -7,7 +7,7 @@ public class login {
         this.email = email;
         this.password  = password;
     }
-    public int loginattempt() {
+    public int authenticateUser() {
         if (email == "") {
             counter += 1;
             if (counter == 3) {
@@ -25,13 +25,15 @@ public class login {
         return 1;
     }
     
-    public boolean authentication() {
-        if (email == "") {
-            return false;
+    public boolean verifyCredentials() {
+        for (int i = 0; i < loginDatabase.length(); ++i) {
+            if (email == loginDatabase[i][0]) {
+                if (password == loginDatabase[i][1]) {
+                    return true;
+                }
+            }
         }
-        if (password == "") {
-            return false;
-        }
-        return true;
+        return false;
     }
+
 }
