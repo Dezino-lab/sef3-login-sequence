@@ -16,7 +16,4 @@ public class Dashboard {
 
         //this method displays the dashboard for the current route. 
     } 
-
-
-
 }

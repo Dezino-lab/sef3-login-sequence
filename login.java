@@ -7,6 +7,7 @@ public class Login {
         this.email = email;
         this.password  = password;
     }
+
     public int authenticateUser() {
         if (email == "") {
             counter += 1;
@@ -23,6 +24,7 @@ public class Login {
             return 0;
         }
         return 1;
+        // if invalid email or password, return 0. if valid, return 1. if 0 has been returned 3 times, return 2.
     }
     
     public boolean verifyCredentials() {
@@ -34,10 +36,12 @@ public class Login {
             }
         }
         return false;
+        // if login details in database, return true to allow access
     }
 
     public String generateSessionID() {
         return "17399388fdcffe9";
+        // generate random hexadecimal session id
     }
 
     public void setEmail(String email) {
