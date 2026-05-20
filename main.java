@@ -21,10 +21,15 @@ public static void main(String[] args) {
         check = session.authenticateUser();
     }
     if (check == 2) {
-        System.out.println("Too many failed attempts, please try again later.")
-    }
-    if (check == 0) {
-        session.verifyCredentials();
+        System.out.println("Too many failed attempts, please try again later.");
+        boolean check2 = false;
+        if (check == 0) {
+            check2 = session.verifyCredentials();
+            if (check2 == true) {
+                String id = session.generateSessionID();
+                openDashboard(id);
+            }
+        }
     }
     sc.close();
     

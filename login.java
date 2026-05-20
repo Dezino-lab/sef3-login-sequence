@@ -36,6 +36,10 @@ public class Login {
         return false;
     }
 
+    public String generateSessionID() {
+        return "17399388fdcffe9";
+    }
+
     public void setEmail(String email) {
         this.email = email;
     }
