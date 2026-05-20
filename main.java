@@ -27,7 +27,14 @@ public static void main(String[] args) {
             check2 = session.verifyCredentials();
             if (check2 == true) {
                 String id = session.generateSessionID();
-                openDashboard(id);
+                Dashboard current = new Dashboard(id);
+                current.openDashboard();
+
+                System.out.println("Enter route: "); 
+                String routeID = sc.nextLine(); 
+
+                current.showDashboard(routeID); 
+
             }
         }
     }
